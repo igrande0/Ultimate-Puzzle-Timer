@@ -5,7 +5,7 @@ Much of Souza's java code will be reused in this project. His work is greatly ap
 
 ##Planned Features
 * Random scramblers for each applicable puzzle with random state scramblers when reasonable
-* A stand-alone multiple scramble generator
+* A stand-alone multiple scramble generator Activity
 * Category manager for custom puzzle categories
 * Graphic preview of each puzzle scramble, including a color scheme editor
 * Detailed session and lifetime statistics, including graphs of improvement over time
