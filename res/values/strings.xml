@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ultimate Puzzle Timer</string>
+    <string name="starting_time">00.00</string>
+    <string name="menu_settings">Settings</string>
+    <string name="exit">Exit</string>
+    <string name="exit_message">Are you sure you want to exit and end your session?</string>
+    
+    <!-- puzzles -->
+    <string name="FLOPPY-CUBE">Floppy cube</string>
+    <string name="MEGAMINX">Megaminx</string>
+    <string name="OTHER">Other</string>
+    <string name="5x5x5-CUBE">5x5x5 cube</string>
+    <string name="PYRAMINX">Pyraminx</string>
+    <string name="RUBIKS-CLOCK">Rubik\'s clock</string>
+    <string name="RUBIKS-CUBE">Rubik\'s cube</string>
+    <string name="RUBIKS-DOMINO">Rubik\'s domino</string>
+    <string name="two2x2x2-CUBE">2x2x2 cube</string>
+    <string name="4x4x4-CUBE">4x4x4 cube</string>
+    <string name="RUBIKS-TOWER">Rubik\'s tower</string>
+    <string name="SKEWB">Skewb</string>
+    <string name="SQUARE-1">Square-1</string>
+    <string name="TOWER-CUBE">Tower cube</string>
+    <string name="6x6x6-CUBE">6x6x6 cube</string>
+    <string name="7x7x7-CUBE">7x7x7 cube</string>
+    
+    <!-- scramblers -->
+    <string name="2x2x2-CUBE-RANDOM">Random scrambler</string>
+    <string name="2x2x2-CUBE-URF">&lt;U, R, F&gt; scrambler</string>
+    <string name="CUBE-SUBOPTIMAL-URF">Suboptimal &lt;U, R, F&gt; scrambler</string>
+    <string name="RUBIKS-CUBE-RANDOM">Random scrambler</string>
+    <string name="RUBIKS-CUBE-LU">&lt;L, U&gt; scramble</string>
+    <string name="RUBIKS-CUBE-RU">&lt;R, U&gt; scramble</string>
+    <string name="RUBIKS-CUBE-CLL-TRAINING">CLL training scrambler</string>
+    <string name="RUBIKS-CUBE-ELL-TRAINING">ELL training scrambler</string>
+    <string name="RUBIKS-CUBE-FRIDRICH-F2L-TRAINING ">F2L training scrambler</string>
+    <string name="RUBIKS-CUBE-FRIDRICH-OLL-TRAINING">OLL training scrambler</string>
+    <string name="RUBIKS-CUBE-FRIDRICH-PLL-TRAINING">PLL training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-CORNERS-TRAINING">Corners permutation training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-CORNERS-PERMUTATION-TRAINING">Corners permutation training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-CORNERS-ORIENTATION-TRAINING">Corners orientation training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-EDGES-TRAINING">Edges only training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-EDGES-PERMUTATION-TRAINING">Edges permutation training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-EDGES-ORIENTATION-TRAINING">Edges orientation training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-ORIENTATION-TRAINING">Orientation training scrambler</string>
+    <string name="RUBIKS-CUBE-3OP-PERMUTATION-TRAINING">Permutation training scrambler</string>
+    <string name="RUBIKS-CUBE-BLD-SINGLE-STICKER-CYCLE">Single sticker cycle scrambler</string>
+    <string name="RUBIKS-CUBE-EASY-CROSS">Easy cross scrambler</string>
+    <string name="4x4x4-CUBE-RANDOM">Random scrambler</string>
+    <string name="5x5x5-CUBE-RANDOM">Random scrambler</string>
+    <string name="6x6x6-CUBE-RANDOM">Random scrambler</string>
+    <string name="7x7x7-CUBE-RANDOM">Random scrambler</string>
+    <string name="RUBIKS-CLOCK-RANDOM">Random scrambler</string>
+    <string name="MEGAMINX-RANDOM">Random scrambler</string>
+    <string name="PYRAMINX-RANDOM">Random scrambler</string>
+    <string name="PYRAMINX-SUBOPTIMAL-RANDOM">Suboptimal random scrambler</string>
+    <string name="SQUARE-1-RANDOM">Random scrambler</string>
+    <string name="SQUARE-1-CUBE-SHAPE">Cube shape scrambler</string>
+    <string name="SKEWB-RANDOM">Random scrambler</string>
+    <string name="FLOPPY-CUBE-RANDOM">Random scrambler</string>
+    <string name="TOWER-CUBE-RANDOM">Random scrambler</string>
+    <string name="RUBIKS-TOWER-RANDOM">Random scrambler</string>
+    <string name="RUBIKS-DOMINO-RANDOM">Random scrambler</string>
+    <string name="EMPTY ">Random scrambler</string>
+
+</resources>
