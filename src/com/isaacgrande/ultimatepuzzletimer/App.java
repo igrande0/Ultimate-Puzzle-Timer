@@ -3,7 +3,7 @@ package com.isaacgrande.ultimatepuzzletimer;
 import android.app.Application;
 import android.content.Context;
 
-public class App extends Application {
+public class App extends Application{
 	private static Context mContext;
 	
 	@Override
