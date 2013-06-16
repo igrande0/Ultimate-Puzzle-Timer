@@ -1,6 +1,7 @@
 package com.isaacgrande.ultimatepuzzletimer;
 
 import com.isaacgrande.ultimatepuzzletimer.models.Timer;
+import com.isaacgrande.ultimatepuzzletimer.state.ScrambleManager;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,6 +19,7 @@ public class MainActivity extends Activity{
     private Button mTimerButton;
     private TextView mTimeLabel;
     private TextView mScrambleLabel;
+    private MainActivity mContext = this;
     
     private Timer mTimer = new Timer();
 
@@ -36,6 +38,7 @@ public class MainActivity extends Activity{
         public void onClick(View view) {
             if (mTimer.isRunning()) {
             	mTimer.stop();
+            	new ScrambleManager(mContext).execute();
             	
                 mHandler.removeCallbacks(mUpdateTimeTask);
             }
@@ -47,6 +50,10 @@ public class MainActivity extends Activity{
             }
         }
     };
+    
+    public void setScramble(String scramble) {
+    	mScrambleLabel.setText(scramble);
+    }
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,6 +94,9 @@ public class MainActivity extends Activity{
         mTimerButton = (Button) findViewById(R.id.timer_button);
         mTimeLabel = (TextView) findViewById(R.id.time_label);
         mScrambleLabel = (TextView) findViewById(R.id.scramble_label);
+        
+        new ScrambleManager(this).execute();
+
         mTimerButton.setOnClickListener(mStartStopListener);
     }
     
