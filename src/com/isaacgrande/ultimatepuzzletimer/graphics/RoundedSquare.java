@@ -41,13 +41,13 @@ public class RoundedSquare {
     static short drawOrder[]; // order to draw vertices
     private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
 
-    float color[] = { 0.5f, 0.5f, 0.5f, 1.0f };
+    float color[] = { 0.5f, 0f, 0f, 1.0f };
 
     /**
 * Sets up the drawing object data for use in an OpenGL ES context.
 */
     public RoundedSquare(int numCornerTriangles, float cornerSize, float red, float green, float blue) {
-    	squareCoords = new float[(12 + (numCornerTriangles-1)*4)*3];
+    	squareCoords = new float[(12 + (numCornerTriangles)*4)*3];
     	drawOrder = new short[(10 + numCornerTriangles*4)*3];
     	
     	// add vertices for non rounded edges
@@ -107,8 +107,8 @@ public class RoundedSquare {
     	drawOrder[2] = 2;
     	// middle triangle 2
     	drawOrder[3] = 1;
-    	drawOrder[4] = 2;
-    	drawOrder[5] = 3;
+    	drawOrder[4] = 3;
+    	drawOrder[5] = 2;
     	// upper triangle 1
     	drawOrder[6] = 4;
     	drawOrder[7] = 5;
@@ -118,11 +118,11 @@ public class RoundedSquare {
     	drawOrder[10] = 5;
     	drawOrder[11] = 1;
     	// left triangle 1
-    	drawOrder[12] = 4;
-    	drawOrder[13] = 0;
-    	drawOrder[14] = 5;
+    	drawOrder[12] = 7;
+    	drawOrder[13] = 6;
+    	drawOrder[14] = 0;
     	// left triangle 2
-    	drawOrder[15] = 5;
+    	drawOrder[15] = 7;
     	drawOrder[16] = 0;
     	drawOrder[17] = 2;
     	// right triangle 1
@@ -130,7 +130,7 @@ public class RoundedSquare {
     	drawOrder[19] = 1;
     	drawOrder[20] = 8;
     	// right triangle 2
-    	drawOrder[21] = 1;
+    	drawOrder[21] = 3;
     	drawOrder[22] = 8;
     	drawOrder[23] = 9;
     	// bottom triangle 1
@@ -149,15 +149,17 @@ public class RoundedSquare {
     	
     	// add vertices and draw order for all rounded edge triangles
     	for(int i = 1; i <= numCornerTriangles; ++i){
-    		float xIncr = (float) (cornerSize * Math.cos(0.5*Math.PI*(numCornerTriangles/i)));
-    		float yIncr = (float) (cornerSize * Math.sin(0.5*Math.PI*(numCornerTriangles/i)));
+    		float xIncr = (float) ((double)cornerSize * Math.cos(0.5*Math.PI*((double)i/(double)numCornerTriangles)));
+    		System.out.println("xIncr " + xIncr);
+    		float yIncr = (float) ((double)cornerSize * Math.sin(0.5*Math.PI*((double)i/(double)numCornerTriangles)));
+    		System.out.println("yIncr " + yIncr);
     		// top left - 12 + (i-1)*4
     		squareCoords[36 + (i-1)*12] = -.5f + cornerSize - xIncr;
         	squareCoords[36 + (i-1)*12 + 1] = .5f - cornerSize + yIncr;
         	squareCoords[36 + (i-1)*12 + 2] = 0f;
     		// top right - 12 + (i-1)*4 + 1
         	squareCoords[36 + (i-1)*12 + 3] = .5f - cornerSize + xIncr;
-        	squareCoords[36 + (i-1)*12 + 4] = .5f - cornerSize + xIncr;
+        	squareCoords[36 + (i-1)*12 + 4] = .5f - cornerSize + yIncr;
         	squareCoords[36 + (i-1)*12 + 5] = 0f;
     		// bottom left - 12 + (i-1)*4 + 2
         	squareCoords[36 + (i-1)*12 + 6] = -.5f + cornerSize - xIncr;

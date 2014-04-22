@@ -16,12 +16,14 @@ public class CubeRenderer implements Renderer {
     private final float[] mProjectionMatrix = new float[16];
     private final float[] mViewMatrix = new float[16];
     private final float[] mTranslationMatrix = new float[16];
+    RoundedSquare square;
 
     @Override
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
-
         // Set the background frame color
-        GLES20.glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
+        GLES20.glClearColor(0f, 0f, 0f, 1.0f);
+        
+        square = new RoundedSquare(8, .1f, 0f, 0f, 0f);
     }
 
     @Override
@@ -36,46 +38,7 @@ public class CubeRenderer implements Renderer {
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mViewMatrix, 0);
 
         // Draw square
-        //mSquare.draw(mMVPMatrix);
-
-        // Create a rotation for the triangle
-
-        // Use the following code to generate constant rotation.
-        // Leave this code out when using TouchEvents.
-        //long time = SystemClock.uptimeMillis() % 4000L;
-        //float angle = 0.090f * ((int) time);
-
-        //Matrix.setRotateM(mRotationMatrix, 0, angle, 0, 0, 1.0f);
-
-        // Combine the rotation matrix with the projection and camera view
-        // Note that the mMVPMatrix factor *must be first* in order
-        // for the matrix multiplication product to be correct.
-        //Matrix.multiplyMM(scratch, 0, mMVPMatrix, 0, mRotationMatrix, 0);
-
-        // Draw triangle
-        //mTriangle.draw(scratch);
-        
-        
-        //mMeter.draw(mTranslationMatrix, meterColor);
-        
-        // Draw a meter marker on top of the screen (for hard)
-        //mMeterMarker.draw(mMVPMatrix);
-        
-        // Create a translation matrix for the middle meter marker
-        Matrix.translateM(mTranslationMatrix, 0, mMVPMatrix, 0, 0f, -0.66f, 0f);
-        
-        // draw the middle meter marker
-        //mMeterMarker.draw(mTranslationMatrix);
-        
-        // create a translation matrix for the lowest meter marker
-        Matrix.translateM(mTranslationMatrix, 0, mMVPMatrix, 0, 0f, -1.32f, 0f);
-        
-        // draw the lowest meter marker
-        //mMeterMarker.draw(mTranslationMatrix);
-        
-        // translate and draw the touch marker
-        
-        //mTouchMarker.draw(mTranslationMatrix);
+        square.draw(mMVPMatrix);
     }
 
     @Override
