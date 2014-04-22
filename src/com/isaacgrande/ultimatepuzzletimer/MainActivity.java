@@ -20,6 +20,7 @@ public class MainActivity extends Activity{
     private TextView mTimeLabel;
     private TextView mScrambleLabel;
     private MainActivity mContext = this;
+    private ScrambleManager mScrambleManager;
     
     private Timer mTimer = new Timer();
 
@@ -94,7 +95,8 @@ public class MainActivity extends Activity{
         mTimerButton = (Button) findViewById(R.id.timer_button);
         mTimeLabel = (TextView) findViewById(R.id.time_label);
         mScrambleLabel = (TextView) findViewById(R.id.scramble_label);
-        
+        mScrambleManager = new ScrambleManager(this);
+        mScrambleManager.execute();
         new ScrambleManager(this).execute();
 
         mTimerButton.setOnClickListener(mStartStopListener);
